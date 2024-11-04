@@ -1,0 +1,57 @@
+.ui-slider {
+  width: 300px;
+  padding: 1.6rem;
+  cursor: pointer;
+}
+.ui-slider-wrapper {
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  height: 4px;
+  position: relative;
+  background-color: #e4e4e4;
+  border-radius: 2px;
+}
+.progress {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background-color: theme("colors.primary-500");
+  left: 10%;
+  right: 20%;
+  transition-property: left, right;
+  transition-duration: 80ms;
+  transition-timing-function: cubic-bezier(0, 0.6, 1, 1);
+}
+.thumbLeft,
+.thumbRight {
+  position: absolute;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  outline: none;
+  background-color: theme("colors.primary-500");
+  translate: -50% -6px;
+  transition-property: left, box-shadow;
+  transition-duration: 80ms;
+  transition-timing-function: cubic-bezier(0, 0.6, 1, 1);
+  z-index: 1;
+}
+.thumbRight:active, .thumbRight:focus, .thumbRight:hover,
+.thumbLeft:active, .thumbLeft:focus, .thumbLeft:hover {
+  box-shadow: 0 0 0 8px rgba(0, 99, 199, 0.2);
+}
+.ui-slider__mark-ticks {
+  position: absolute;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #c4c4c4;
+  translate: -50% -2px;
+  pointer-events: none;
+}
+.ui-slider__mark-ticks--active {
+  background-color: theme("colors.primary-500");
+}

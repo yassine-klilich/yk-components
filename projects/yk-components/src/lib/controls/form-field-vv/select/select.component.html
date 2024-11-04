@@ -1,0 +1,22 @@
+<div
+  class="absolute top-0 left-0 w-full h-full outline-none flex items-center px-1.6 gap-x-.8 pointer-events-none"
+  tabindex="0"
+  #trigger
+  (keydown)="_keyDown($event)"
+  (focus)="_focusEvent()"
+  (blur)="_blurEvent()"
+>
+  <div
+    class="ui-select_content-value mt-1.8 grow text-ellipsis overflow-hidden whitespace-nowrap"
+  >
+    {{ _displayedValue }}
+  </div>
+  <!-- <ng-icon
+    class="ui-select__arrow transition-scale origin-center"
+    name="lucideChevronDown"
+  ></ng-icon> -->
+</div>
+
+<ng-template #contentTemplate>
+  <ng-content></ng-content>
+</ng-template>

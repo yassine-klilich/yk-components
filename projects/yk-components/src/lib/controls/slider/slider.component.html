@@ -1,0 +1,35 @@
+<div class="ui-slider" (pointerdown)="_onPointerDown($event)">
+  <div #slider class="ui-slider-wrapper">
+    @if (!hideTracker) {
+    <div
+      class="progress"
+      [style.left]="_leftPercentage + '%'"
+      [style.right]="100 - _rightPercentage + '%'"
+    ></div>
+    }
+    <a
+      #thumbLeft
+      tabindex="0"
+      class="thumbLeft"
+      [style.left]="_getLeftPosition()"
+      (keydown)="_onKeyDown($event, 'left')"
+    ></a>
+    @if (type == 'range') {
+    <a
+      #thumbRight
+      tabindex="0"
+      class="thumbRight"
+      [style.left]="_rightPercentage + '%'"
+      (keydown)="_onKeyDown($event, 'right')"
+    ></a>
+    }
+    <div class="ui-slider__mark-ticks-wrapper">
+      <div
+        *ngFor="let i of _markTicks"
+        class="ui-slider__mark-ticks"
+        [class.ui-slider__mark-ticks--active]="_isTickActive(i)"
+        [style.left]="_getTickPosition(i)"
+      ></div>
+    </div>
+  </div>
+</div>

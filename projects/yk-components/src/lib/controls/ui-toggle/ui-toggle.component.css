@@ -1,0 +1,98 @@
+:host.ui-toggle {
+
+  & .ui-toggle__wrapper {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .8rem;
+  }
+
+  & .ui-toggle__input-wrapper {
+    display: inline-block;
+    position: relative;
+    order: 1;
+  }
+
+  & .ui-toggle__input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  & .ui-toggle__track {
+    width: 40px;
+    height: 20px;
+    border-radius: 6px;
+    background-color: #C5C5C5;
+  }
+
+  & .ui-toggle__thumb {
+    translate: 2px 2px;
+    transition-property: translate, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.6, 0, 0.6, 1);
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 2px #434343;
+
+    & svg {
+      translate: 3px 4px;
+      scale: 0;
+      transition-property: scale;
+      transition-duration: 150ms;
+      transition-timing-function: ease-in;
+    }
+  }
+
+  & input:checked ~ .ui-toggle__track {
+    background-color: theme("colors.primary-500");
+
+    & .ui-toggle__thumb {
+      translate: 22px 2px;
+
+      & svg {
+        scale: 1;
+      }
+    }
+  }
+
+  /* Input states */
+  & input:is(:focus, :hover) ~ .ui-toggle__track .ui-toggle__thumb {
+    box-shadow: 0 0 2px #434343, 0 0 0px 6px rgba(163, 163, 163, 0.3);
+  }
+  & input:checked:is(:focus, :hover) ~ .ui-toggle__track .ui-toggle__thumb {
+    box-shadow: 0 0 0px 6px #73aee987;
+  }
+  & input:disabled {
+    cursor: not-allowed;
+  }
+  & input:disabled ~ .ui-toggle__track {
+    opacity: .5;
+  }
+
+  & .ui-toggle__label {
+    font-weight: 400;
+    cursor: pointer;
+    /* By default label should be at the left of the input */
+    order: 0;
+    @apply text-ui-label;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  /* Move label to right if labelPosition directive sat to 'right' */
+  &.ui-toggle--label-right .ui-toggle__label {
+    order: 2;
+  }
+}
+

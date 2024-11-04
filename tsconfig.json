@@ -24,7 +24,7 @@
     ],
     "paths": {
       "yk-components": [
-        "./dist/yk-components"
+        "./dist/yk-components",
       ]
     }
   },

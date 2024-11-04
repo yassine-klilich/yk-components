@@ -1,0 +1,13 @@
+.ui-select-pane-top .ui-select__options {
+  transform-origin: top;
+  box-shadow: rgb(0 0 0 / 30%) 0px 2px 8px 0px;
+}
+
+.ui-select-pane-bottom .ui-select__options {
+  transform-origin: bottom;
+  box-shadow: rgb(0 0 0 / 30%) 0px 0px 8px 0px;
+}
+
+.ui-select--has-input .ui-select__wrapper {
+  padding-top: 0px;
+}

@@ -1,0 +1,3 @@
+.ui-select--open .ui-select__arrow {
+  scale: 1 -1;
+}

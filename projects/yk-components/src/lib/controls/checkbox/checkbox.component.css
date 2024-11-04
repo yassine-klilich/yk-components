@@ -1,0 +1,36 @@
+.ui-checkbox {
+  .ui-checkbox__mark {
+    border-color: #cbcbcb;
+  }
+
+  & input {
+    cursor: pointer;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    &:disabled ~ .ui-checkbox__mark {
+      opacity: 0.5;
+      background-color: #f4f4f4;
+    }
+
+    &:not(:disabled) {
+      &:is(:hover, :focus) ~ .ui-checkbox__mark {
+        box-shadow: 0 0 0px 6px #f0f0f0;
+      }
+      &:is(:hover, :focus):checked ~ .ui-checkbox__mark {
+        box-shadow: 0 0 0px 6px hsla(210, 73%, 68%, 0.25);
+      }
+    }
+
+    &:checked ~ .ui-checkbox__mark {
+      border-color: theme("colors.primary-500");
+      background-color: theme("colors.primary-500");
+    }
+
+    &:not(:checked) ~ .ui-checkbox__mark .ui-checkbox__check {
+      display: none;
+    }
+  }
+}

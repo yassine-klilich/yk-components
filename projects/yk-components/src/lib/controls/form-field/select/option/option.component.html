@@ -1,0 +1,25 @@
+<div
+  #optionItem
+  class="ui-option relative text-m flex gap-x-1.4 items-center h-[4rem] px-1.4 rounded-xs cursor-pointer text-default select-none m-.4"
+  [class.ui-option--hidden]="!visibility"
+  [class.ui-option--selected]="selected"
+  [class.ui-option--active]="_isActive"
+  [class.ui-option--disabled]="disabled"
+  [class.ui-option--multiple]="_uiSelect.multiple"
+  (click)="_triggerOption()"
+>
+  @if (_uiSelect.multiple) {
+  <input type="checkbox" [checked]="selected" class="accent-primary-500" />
+  }
+  <div
+    #content
+    class="grow truncate"
+    [class.ui-option__content--no-value]="!_uiSelect.multiple && !value"
+  >
+    <ng-content></ng-content>
+  </div>
+  @if (selected && !_uiSelect.multiple && value) {
+  <ng-icon name="lucideCheck" />
+  }
+  <span ui-ripple></span>
+</div>

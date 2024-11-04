@@ -1,0 +1,24 @@
+<label class="inline-flex flex-row gap-x-.6 items-center">
+  <span class="w-2 h-2 inline-block relative">
+    <input
+      type="checkbox"
+      class="opacity-0 absolute inset-0 z-10"
+      [checked]="checked"
+      [attr.id]="_inputId"
+    />
+    <span
+      class="ui-checkbox__mark absolute inset-0 border-2 rounded-[.7rem] z-0 transition-shadow duration-150 grid place-content-center"
+    >
+      <ng-icon
+        class="ui-checkbox__check"
+        name="lucideCheck"
+        color="white"
+        strokeWidth="3"
+        size="12"
+      />
+    </span>
+  </span>
+  <span>
+    <ng-content></ng-content>
+  </span>
+</label>

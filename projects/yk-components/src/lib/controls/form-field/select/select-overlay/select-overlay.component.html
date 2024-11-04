@@ -1,0 +1,25 @@
+<div
+  [@transformPanel]="'showing'"
+  class="ui-select__options w-full max-h-[294px] overflow-auto rounded-m bg-white flex flex-col"
+>
+  @if (uiSelect.hasSearchInput) {
+  <div class="p-.8 pb-.2">
+    <input
+      #searchInput
+      type="text"
+      class="h-3.6 w-full px-1 rounded-m border-2 border-[#d9d9d9] focus:border-[#bcbcbc] bg-[#F8F8F8] outline-none"
+      placeholder="Search"
+      (input)="_onInputSearchInput()"
+    />
+  </div>
+  }
+  <div class="ui-select__wrapper overflow-auto" role="listbox" #optionsWrapper>
+    <ng-container *ngTemplateOutlet="uiSelect.template"></ng-container>
+  </div>
+  @if (_visibleOptions == 0) {
+  <span class="text-m flex items-center h-[4.2rem] px-1">{{
+    uiSelect.searchIndicatorLabel
+  }}</span>
+
+  }
+</div>

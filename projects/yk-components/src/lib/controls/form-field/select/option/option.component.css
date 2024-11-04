@@ -1,0 +1,23 @@
+.ui-option {
+  &.ui-option--selected {
+    color: theme("colors.primary-500");
+  }
+  &.ui-option--active {
+    background-color: hsl(0, 0%, 95%);
+  }
+  &:hover {
+    background-color: hsl(0, 0%, 92%);
+  }
+  &.ui-option--disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  &.ui-option--hidden {
+    display: none;
+  }
+
+  .ui-option__content--no-value {
+    color: theme("colors.default");
+  }
+}

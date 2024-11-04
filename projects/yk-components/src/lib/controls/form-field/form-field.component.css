@@ -1,0 +1,79 @@
+:host.form-field {
+  .form-field__input {
+    @apply outline-none bg-transparent leading-normal;
+
+    &::placeholder {
+      visibility: hidden;
+    }
+  }
+  textarea.form-field__input {
+    margin-bottom: 1rem;
+    min-height: 1.8rem;
+  }
+
+  &.form-field--tertiary .form-field__control {
+    border: none;
+    box-shadow: none;
+    min-height: 3.6rem;
+    padding: 0;
+  }
+
+  /* state: No label */
+  &.form-field--no-label {
+    .form-field__input::placeholder {
+      visibility: visible;
+    }
+    .form-field__control {
+      padding-top: 1.4rem;
+    }
+    .ui-select_content-value {
+      margin-top: 0;
+    }
+  }
+
+  /* state: Float label above */
+  &.form-field--float-label {
+    .form-field__label {
+      @apply -translate-y-1 text-s;
+    }
+    .form-field__input::placeholder {
+      visibility: visible;
+    }
+  }
+
+  /* state: Focused */
+  &.form-field--focus {
+    .form-field__control {
+      @apply border-primary-500;
+    }
+  }
+
+  /* state: Disabled */
+  &.form-field--disabled {
+    .form-field__label {
+      @apply text-ui-label-disabled;
+    }
+
+    .form-field__input {
+      @apply cursor-not-allowed;
+    }
+
+    .form-field__control {
+      @apply cursor-not-allowed text-ui-input-disabled-text bg-ui-input-disabled-bg border-ui-input-disabled-border;
+    }
+  }
+
+  /* state: Invalid */
+  &.form-field--invalid {
+    .form-field__control {
+      @apply border-ui-input-invalid-border bg-ui-input-invalid-bg;
+    }
+    .form-field__label {
+      @apply text-ui-input-invalid-border;
+    }
+  }
+
+  &.form-field--select .form-field__control {
+    cursor: pointer;
+  }
+}

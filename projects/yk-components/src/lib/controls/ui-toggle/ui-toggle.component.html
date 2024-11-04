@@ -1,0 +1,25 @@
+<div class="ui-toggle__wrapper">
+  <div class='ui-toggle__input-wrapper'>
+    <input
+      type='checkbox'
+      class="ui-toggle__input"
+      [attr.name]="name"
+      [attr.id]="_inputId"
+      [checked]="checked"
+      [attr.disabled]="disabled ? true : null"
+      (input)="_onInput($event)"
+      (blur)="_onFocus(false)"
+      (focus)="_onFocus(true)"
+    >
+    <div class='ui-toggle__track'>
+      <div class='ui-toggle__thumb'>
+        <svg width="10" height="8" viewBox="0 0 8 6"  xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.12791 3.87213C3.08886 3.91118 3.02554 3.91118 2.98649 3.87213L1.52512 2.41078C1.32986 2.21552 1.01328 2.21553 0.818016 2.41079L0.582314 2.64649C0.387051 2.84175 0.38705 3.15833 0.582311 3.35359L2.70364 5.47495C2.89891 5.67021 3.21549 5.67021 3.41075 5.47494L7.41765 1.46799C7.61291 1.27273 7.61291 0.956148 7.41765 0.760887L7.18195 0.525187C6.98669 0.329924 6.67011 0.329923 6.47484 0.525186L3.12791 3.87213Z" fill="#0065C8"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <label [attr.for]="_inputId" (click)="$event.stopPropagation()" class="ui-toggle__label select-none">
+    <ng-content></ng-content>
+  </label>
+</div>

@@ -1,0 +1,12 @@
+.ui-optgroup--disabled .ui-optgroup__label {
+  opacity: 0.5;
+}
+.ui-optgroup .ui-option {
+  padding-inline: 2.8rem;
+}
+.ui-optgroup:has(.ui-option.ui-option--hidden) {
+  display: none;
+}
+.ui-optgroup:has(.ui-option:not(.ui-option--hidden)) {
+  display: block;
+}

@@ -1,0 +1,31 @@
+<div class="form-field__wrapper">
+  <div class="form-field__input-wrapper">
+    @if (label) {
+    <label
+      [attr.for]="control.id"
+      class="form-field__label h-1.8 text-ui-label font-medium duration-200 origin-top-center pointer-events-none transition_ui-label ease-ui-label absolute top-1.8 left-1.6"
+      >{{ label }}</label
+    >
+    }
+    <div
+      class="form-field__control flex flex-col cursor-text w-full min-h-[5rem] m-0 px-1.4 pt-2.2 border-2 border-solid rounded-l shadow-input transition-border-color duration-[240ms] bg-white border-ui-input-border hover:bg-ui-input-bg-hover group-[.form-field--tertiary]:hover:bg-light-grey group-[.form-field--tertiary.form-field--focus]:bg-light-grey"
+      (click)="control.onFormFieldClick()"
+    >
+      <ng-content select="[ui-input], ui-select"></ng-content>
+    </div>
+  </div>
+
+ <!--  @if (!hideSubscript) {
+  <div class="pl-.4 before:content-[''] before:inline-block">
+    @switch (_getSubscriptContent()) { @case ('error') {
+    <div class="float-left" [@subscriptAnimation]="_subscriptAnimationState">
+      <ng-content select="ui-error"></ng-content>
+    </div>
+    } @case ('hint') {
+    <div class="float-left" [@subscriptAnimation]="_subscriptAnimationState">
+      <ng-content select="ui-hint"></ng-content>
+    </div>
+    } }
+  </div>
+  } -->
+</div>
